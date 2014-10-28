@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1FCCE619FFF6B6003F77D9 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1FCCE519FFF6B6003F77D9 /* ChecklistItem.swift */; };
 		4BE7787619FFC315001BBDD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7787519FFC315001BBDD4 /* AppDelegate.swift */; };
-		4BE7787819FFC315001BBDD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7787719FFC315001BBDD4 /* ViewController.swift */; };
+		4BE7787819FFC315001BBDD4 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7787719FFC315001BBDD4 /* ChecklistViewController.swift */; };
 		4BE7787B19FFC315001BBDD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7787919FFC315001BBDD4 /* Main.storyboard */; };
 		4BE7787D19FFC315001BBDD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7787C19FFC315001BBDD4 /* Images.xcassets */; };
 		4BE7788019FFC315001BBDD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BE7787E19FFC315001BBDD4 /* LaunchScreen.xib */; };
@@ -26,10 +27,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B1FCCE519FFF6B6003F77D9 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		4BE7787019FFC315001BBDD4 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BE7787419FFC315001BBDD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BE7787519FFC315001BBDD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BE7787719FFC315001BBDD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4BE7787719FFC315001BBDD4 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		4BE7787A19FFC315001BBDD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BE7787C19FFC315001BBDD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4BE7787F19FFC315001BBDD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -78,11 +80,12 @@
 			isa = PBXGroup;
 			children = (
 				4BE7787519FFC315001BBDD4 /* AppDelegate.swift */,
-				4BE7787719FFC315001BBDD4 /* ViewController.swift */,
+				4BE7787719FFC315001BBDD4 /* ChecklistViewController.swift */,
 				4BE7787919FFC315001BBDD4 /* Main.storyboard */,
 				4BE7787C19FFC315001BBDD4 /* Images.xcassets */,
 				4BE7787E19FFC315001BBDD4 /* LaunchScreen.xib */,
 				4BE7787319FFC315001BBDD4 /* Supporting Files */,
+				4B1FCCE519FFF6B6003F77D9 /* ChecklistItem.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -212,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BE7787819FFC315001BBDD4 /* ViewController.swift in Sources */,
+				4BE7787819FFC315001BBDD4 /* ChecklistViewController.swift in Sources */,
+				4B1FCCE619FFF6B6003F77D9 /* ChecklistItem.swift in Sources */,
 				4BE7787619FFC315001BBDD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +409,7 @@
 				4BE7789119FFC315001BBDD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BE7789219FFC315001BBDD4 /* Build configuration list for PBXNativeTarget "ChecklistsTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				4BE7789419FFC315001BBDD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
