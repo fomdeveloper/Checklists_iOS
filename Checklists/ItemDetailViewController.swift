@@ -1,5 +1,5 @@
 //
-//  AddItemViewController.swift
+//  ItemDetailViewController.swift
 //  Checklists
 //
 //  Created by Fernando on 29/10/2014.
@@ -9,21 +9,35 @@
 import UIKit
 
 
-protocol AddItemViewControllerDelegate: class {
+protocol ItemDetailViewControllerDelegate: class {
 
-    func addItemViewControllerDidCancel(controller: AddItemViewController)
-    func addItemViewController(controller:AddItemViewController, didFinishAddingItem item: ChecklistItem)
-
+    func itemDetailViewControllerDidCancel(controller: ItemDetailViewController)
+    func itemDetailViewController(controller:ItemDetailViewController, didFinishAddingItem item: ChecklistItem)
+    func itemDetailViewController(controller:ItemDetailViewController, didFinishEditingItem item: ChecklistItem)
 }
 
 
-class AddItemViewController: UITableViewController,UITextFieldDelegate {
+class ItemDetailViewController: UITableViewController,UITextFieldDelegate {
 
+    
+    var itemToEdit: ChecklistItem?
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var doneBarButton: UIBarButtonItem!
 
-    weak var delegate : AddItemViewControllerDelegate?
+    weak var delegate : ItemDetailViewControllerDelegate?
+    
+    
+    override func viewDidLoad() {
+        tableView.rowHeight = 44
+        
+        if let item = itemToEdit {
+            title = "Edit Item"
+            textField.text = item.text
+            doneBarButton.enabled=true
+        }
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated);
@@ -33,18 +47,23 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
     
     
     @IBAction func done() {
-//        println("content of the texfield: \(textField.text)")
-//        dismissViewControllerAnimated(true, completion: nil);
-        let item = ChecklistItem()
-        item.text = textField.text
-        item.checked = false
-        delegate?.addItemViewController(self, didFinishAddingItem: item)
+
+        if let item = itemToEdit{
+            item.text = textField.text
+            delegate?.itemDetailViewController(self, didFinishEditingItem: item)
+        }else{
+            let item = ChecklistItem()
+            item.text = textField.text
+            item.checked = false
+            delegate?.itemDetailViewController(self, didFinishAddingItem: item)
+        }
+        
     }
     
     
     @IBAction func cancel(){
        // dismissViewControllerAnimated(true, completion: nil)
-        delegate?.addItemViewControllerDidCancel(self)
+        delegate?.itemDetailViewControllerDidCancel(self)
     }
 
     
@@ -59,9 +78,6 @@ class AddItemViewController: UITableViewController,UITextFieldDelegate {
         
         let oldText: NSString = textField.text;
         let newText: NSString = oldText.stringByReplacingCharactersInRange(range, withString: string);
-        
-        println(oldText)
-        println(newText)
         
 //        if newText.length > 0{
 //            doneBarButton.enabled=true;
