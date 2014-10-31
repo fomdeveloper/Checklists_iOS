@@ -11,7 +11,7 @@ import UIKit
 class ChecklistViewController: UITableViewController,ItemDetailViewControllerDelegate {
 
     var items: [ChecklistItem];
-    
+    var checklist: Checklist!
     
     required init(coder aDecoder: NSCoder) {
         items = [ChecklistItem]();
@@ -40,6 +40,11 @@ class ChecklistViewController: UITableViewController,ItemDetailViewControllerDel
      //   println("Data file path is \(dataFilePath())")
     }
     
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        tableView.rowHeight = 44
+        title = checklist.name
+    }
 
     func documentsDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as [String]
